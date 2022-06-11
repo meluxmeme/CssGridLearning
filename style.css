@@ -34,9 +34,24 @@ body{
 
 .container{
     display: grid;
+    grid-gap:5px;
     /* grid-template-columns: 200px 200px auto; */
     /* grid-template-rows: 50px 50px; */
-    grid-template: repeat(2,50px)/ repeat(3,1fr);
-    grid-gap:5px;
+    /* grid-template: repeat(2,50px)/ repeat(3,1fr); */
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 40px 200px 40px;
 
+}
+.header{
+    grid-column: 1/-1;
+}
+.menu{
+grid-column: 1/6;
+}
+.content{
+grid-column: 6/-1;
+}
+.footer{
+    grid-row: 3/-1;
+    grid-column: 1/-1;
 }
