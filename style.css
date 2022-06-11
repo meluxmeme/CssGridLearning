@@ -1,65 +1,77 @@
-body{
-    background-color: rgba(93, 138, 96, 0.644);
-    color: white;
-}
-.container >div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: rgb(62, 65, 211);
-}
-.container >div:nth-child(1n){
-    background-color: rgba(134, 29, 29, 0.945);
-}
-.container > div:nth-child(2n) {
-    background-color: #6a8b7b;
-  }
-  
-  .container > div:nth-child(3n) {
-        background-color: #a37c7a;
-  }
-  
-  .container > div:nth-child(4n) {
-        background-color: #5c523c;
-  }
-  .container > div:nth-child(5n) {
-    background-color: #2e2322;
-}
-
-.container > div:nth-child(6n) {
-    background-color: #eba50e;
-}
-
-
-.container{
+article {
     display: grid;
-    grid-gap:5px;
-    /* grid-template-columns: 200px 200px auto; */
-    /* grid-template-rows: 50px 50px; */
-    /* grid-template: repeat(2,50px)/ repeat(3,1fr); */
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 40px 200px 40px;
-    grid-template-areas: 
-    ". h h h h h h h h h h h"
-    "m m c c c c c c c c c c"
-     "f f f f f f f f f f f f" ;
+    grid-template-columns: 40px 1fr 40px;
+    grid-column-gap: 10px;
+}
 
+article > * {
+    grid-column: 2;
+    min-width: 0;
 }
-.header{
-    /* grid-column: 1/-1; */
-    grid-area: h;
+
+article > figure {
+    grid-column: 1 / -1;
+    margin: 20px 0;
 }
-.menu{
-/* grid-column: 1/6; */
-grid-area: m;
+
+article > .aside {
+    grid-column: 3;
+    color: #666;
+    font-size: 0.8em;
 }
-.content{
-/* grid-column: 6/-1; */
-grid-area: c;
+
+article > blockquote {
+    grid-column: 1 / -1;
+    margin: 10px 0;
+    color: #666;
+    border-left: 10px solid #eee;
+    padding-left: 10px;
 }
-.footer{
-    /* grid-row: 3/-1;
-    grid-column: 1/-1; */
-    grid-area: f;
+
+
+/* General styling */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+body {
+    margin: 0 10px;
+}
+
+img {
+    width: 100%;
+}
+
+.line-numbers a {
+    text-decoration: none;
+    color: #000;
+    padding-right: 1em;
+}
+
+code {
+    background: #eee;
+    padding: 2px 5px;
+}
+
+pre {
+    background: #eee;
+    padding: 10px 15px;
+    overflow: auto;
+}
+
+pre > code {
+    padding: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+figure figcaption {
+    color: #666;
+    font-style: italic;
+    font-size: 0.8em;
 }
